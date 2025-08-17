@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="description" content="YC专业股票估值系统 - 基于真实财务数据的价值投资决策平台" />
+    <meta name="keywords" content="股票估值,价值投资,财务分析,DCF,PE估值,Yahoo Finance" />
+    <meta name="author" content="Davy Zhao (YC)" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="YC专业股票估值系统" />
+    <meta property="og:description" content="基于真实财务数据的价值投资决策平台，支持美股、港股、A股估值分析" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-domain.com" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="YC专业股票估值系统" />
+    <meta name="twitter:description" content="基于真实财务数据的价值投资决策平台" />
+    
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 自定义配置 -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'yc-blue': {
+                50: '#eff6ff',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
+    <title>YC专业股票估值系统</title>
+    
+    <style>
+      /* 自定义样式 */
+      .loading-spinner {
+        border: 3px solid #f3f4f6;
+        border-top: 3px solid #3b82f6;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* 数字等宽字体 */
+      .font-mono {
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+      }
+      
+      /* 滚动条样式 */
+      .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+      }
+      
+      .scrollbar-thin::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 3px;
+      }
+      
+      .scrollbar-thin::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+      }
+      
+      .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      
+      /* 动画效果 */
+      .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      /* 渐变背景 */
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      /* 卡片阴影 */
+      .card-shadow {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      
+      .card-shadow:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+                    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>需要启用 JavaScript</h1>
+        <p>YC股票估值系统需要 JavaScript 才能正常运行。</p>
+        <p>请在您的浏览器中启用 JavaScript 并刷新页面。</p>
+      </div>
+    </noscript>
+    
+    <div id="root">
+      <!-- Loading fallback -->
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);">
+        <div style="text-align: center;">
+          <div class="loading-spinner" style="margin: 0 auto 20px;"></div>
+          <h2 style="color: #1e40af; margin: 0; font-size: 24px; font-weight: 600;">YC股票估值系统</h2>
+          <p style="color: #64748b; margin: 10px 0 0; font-size: 14px;">正在加载中...</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 错误边界 -->
+    <script>
+      window.addEventListener('error', function(e) {
+        console.error('Global error:', e.error);
+        // 可以在这里添加错误报告逻辑
+      });
+      
+      window.addEventListener('unhandledrejection', function(e) {
+        console.error('Unhandled promise rejection:', e.reason);
+        // 可以在这里添加错误报告逻辑
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,281 @@
+/* YC股票估值系统专用样式 */
+
+.App {
+  min-height: 100vh;
+}
+
+/* 估值结果卡片 */
+.valuation-card {
+  @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100;
+  transition: all 0.3s ease;
+}
+
+.valuation-card:hover {
+  @apply shadow-xl border-blue-200;
+  transform: translateY(-2px);
+}
+
+/* 推荐标签样式 */
+.recommendation-buy {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.recommendation-sell {
+  @apply bg-red-100 text-red-800 border-red-200;
+}
+
+.recommendation-hold {
+  @apply bg-yellow-100 text-yellow-800 border-yellow-200;
+}
+
+/* 数据质量指示器 */
+.data-quality-complete {
+  @apply text-green-600;
+}
+
+.data-quality-partial {
+  @apply text-yellow-600;
+}
+
+.data-quality-basic {
+  @apply text-red-600;
+}
+
+/* 计算步骤样式 */
+.calculation-step {
+  @apply bg-white rounded-lg border border-gray-200 p-6 mb-4;
+  position: relative;
+}
+
+.calculation-step::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
+  border-radius: 2px;
+}
+
+.calculation-step-number {
+  @apply w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-semibold text-sm;
+}
+
+/* 财务指标卡片 */
+.metric-card {
+  @apply text-center p-4 rounded-lg transition-all duration-200;
+}
+
+.metric-card-positive {
+  @apply bg-green-50 border border-green-200;
+}
+
+.metric-card-negative {
+  @apply bg-red-50 border border-red-200;
+}
+
+.metric-card-neutral {
+  @apply bg-gray-50 border border-gray-200;
+}
+
+.metric-card:hover {
+  transform: scale(1.02);
+}
+
+.metric-value {
+  @apply text-2xl font-bold mb-1;
+}
+
+.metric-label {
+  @apply text-sm text-gray-600;
+}
+
+/* 风险标签 */
+.risk-normal {
+  @apply bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.risk-high {
+  @apply bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium;
+}
+
+/* 标签页样式 */
+.tab-active {
+  @apply text-blue-600 border-b-2 border-blue-600 bg-blue-50;
+}
+
+.tab-inactive {
+  @apply text-gray-600 hover:text-gray-800 hover:bg-gray-50;
+}
+
+/* 表单组件 */
+.form-group {
+  @apply mb-4;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.form-input {
+  @apply w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
+}
+
+.form-select {
+  @apply w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white transition-all duration-200;
+}
+
+.form-error {
+  @apply text-red-600 text-sm mt-1;
+}
+
+.form-help {
+  @apply text-gray-500 text-sm mt-1;
+}
+
+/* 通知样式 */
+.notification {
+  @apply fixed top-4 right-4 max-w-sm w-full bg-white rounded-lg shadow-lg border-l-4 p-4 z-50;
+  animation: slideIn 0.3s ease-out;
+}
+
+.notification-success {
+  @apply border-green-500;
+}
+
+.notification-error {
+  @apply border-red-500;
+}
+
+.notification-warning {
+  @apply border-yellow-500;
+}
+
+.notification-info {
+  @apply border-blue-500;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 数据展示表格 */
+.data-display-table {
+  @apply w-full;
+}
+
+.data-display-table tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+.data-display-table td {
+  @apply px-4 py-3 text-sm;
+}
+
+.data-display-table th {
+  @apply px-4 py-3 bg-gray-100 font-semibold text-sm text-gray-700;
+}
+
+/* 价格显示 */
+.price-display {
+  @apply font-mono font-bold;
+}
+
+.price-positive {
+  @apply text-green-600;
+}
+
+.price-negative {
+  @apply text-red-600;
+}
+
+.price-neutral {
+  @apply text-gray-600;
+}
+
+/* 百分比显示 */
+.percentage-display {
+  @apply font-mono;
+}
+
+.percentage-positive {
+  @apply text-green-600;
+}
+
+.percentage-negative {
+  @apply text-red-600;
+}
+
+/* 股票代码显示 */
+.stock-code {
+  @apply font-mono font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded text-sm;
+}
+
+/* 公司名称显示 */
+.company-name {
+  @apply font-semibold text-gray-800;
+}
+
+/* 数据来源标识 */
+.data-source {
+  @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800;
+}
+
+.data-source-yahoo {
+  @apply bg-purple-100 text-purple-800;
+}
+
+.data-source-manual {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.data-source-tushare {
+  @apply bg-green-100 text-green-800;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .valuation-card {
+    @apply p-4;
+  }
+  
+  .calculation-step {
+    @apply p-4;
+  }
+  
+  .metric-card {
+    @apply p-3;
+  }
+  
+  .metric-value {
+    @apply text-xl;
+  }
+  
+  .notification {
+    @apply left-4 right-4 max-w-none;
+  }
+}
+
+/* 打印优化 */
+@media print {
+  .valuation-card,
+  .calculation-step {
+    @apply shadow-none border border-gray-300;
+    break-inside: avoid;
+  }
+  
+  .tab-navigation,
+  .notification,
+  .no-print {
+    display: none !important;
+  }
+}

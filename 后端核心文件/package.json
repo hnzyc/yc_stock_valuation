@@ -1,0 +1,39 @@
+{
+  "name": "yc-stock-valuation",
+  "version": "1.0.0",
+  "description": "YC专业股票估值系统 - 基于真实财务数据的价值投资决策平台",
+  "main": "server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "axios": "^1.6.0",
+    "node-cron": "^3.0.3",
+    "csv-parser": "^3.0.0",
+    "yahooFinance2": "^2.11.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "keywords": [
+    "stock-valuation",
+    "investment",
+    "finance",
+    "yahoo-finance",
+    "tushare"
+  ],
+  "author": "Davy Zhao (YC)",
+  "license": "MIT"
+}
