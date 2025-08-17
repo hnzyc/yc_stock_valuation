@@ -218,7 +218,6 @@ GET /api/valuation/presets
 ## 👨‍💻 作者
 
 **Davy Zhao (YC)**
-- 广东粤财信托有限公司 结构金融部负责人
 - 专注价值投资和金融科技创新
 
 ---
